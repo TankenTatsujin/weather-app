@@ -8,6 +8,14 @@
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .weather {
+      background-size: cover;  /* Ensure the background still covers on smaller screens */
+      background-attachment: scroll; /* Prevents weird scroll issues on mobile */
+      background-position: top center; /* Adjusts the position for better mobile display */
+    }
+  }
+
 .search-bar{
     display: flex;
     align-items: center;
