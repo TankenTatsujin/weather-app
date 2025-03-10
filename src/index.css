@@ -10,24 +10,36 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Make sure the background adapts on smaller screens */
 @media (max-width: 768px) {
   body {
-    background-size: contain; /* Ensures the entire image is visible on smaller screens */
+    background-size: cover;  /* Ensure the background still covers on smaller screens */
     background-attachment: scroll; /* Prevents weird scroll issues on mobile */
+    background-position: top center; /* Adjusts the position for better mobile display */
   }
 }
 
-*{
+@media (max-width: 480px) { /* Adjustments for very small screens (mobile phones) */
+  body {
+    background-size: cover;  /* Continue using cover */
+    background-position: top center; /* Keeps the background aligned */
+  }
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-.app{
+.app {
   min-height: 100vh;
   display: grid;
+  justify-items: center; /* Centers content horizontally */
+  align-items: center;   /* Centers content vertically */
+  text-align: center; /* Ensures content is centered properly */
 }
